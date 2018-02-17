@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Get Me Live</title>
+  <link rel="stylesheet" href="./node_modules/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="./node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./node_modules/icheck/skins/all.css" />
+  <link rel="stylesheet" href="./node_modules/select2/dist/css/select2.min.css" />
+  <link rel="stylesheet" href="./node_modules/select2-bootstrap-theme/dist/select2-bootstrap.min.css" />
+</head>
+<body>
+  <div class="container-scroller">
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo" style="padding-left: 50px " href="https://www.getmelive.in">Get Me Live</a>
+        <a class="navbar-brand brand-logo-mini" href="https://www.getmelive.in">Get Me Live</a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-stretch">
+        
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle nav-profile" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+              <img src="./images/faces/face1.jpg" alt="image">
+              <span class="d-none d-lg-inline"><%= user.name %></span>
+            </a>
+            <div class="dropdown-menu navbar-dropdown w-100" aria-labelledby="profileDropdown">
+              <a class="dropdown-item" href="./logout">
+                <i class="mdi mdi-logout mr-2 text-primary"></i>
+                Signout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid page-body-wrapper">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <% for(var i = 1; i <= totalQ ; i++) { %>
+            <li class="nav-item">
+              <a class="nav-link" href="./question<%= i %>">
+                <span class="menu-title" style="font-size: 20px">Question <%= i %></span>
+                <i class="mdi mdi-comment-question-outline mdi-24px menu-icon"></i>
+              </a>
+            </li>
+            <% } %>
+          </ul>
+          <div class="sidebar-progress">
+            <p>Questions Answered</p>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: <%= (qAnswered/totalQ)*100 %>%" aria-valuenow="<%= (qAnswered/totalQ)*100 %>" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p><%= qAnswered %>/<%= totalQ %></p>
+          </div>
+        </nav>
+        <div class="content-wrapper">
+          <%- partial(''+page) %>
+        </div>
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2018 <a href="https://www.getmelive.in/" target="_blank">Get Me Live</a>. All rights reserved.</span>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="./node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+  <script src="./js/off-canvas.js"></script>
+  <script src="./js/misc.js"></script>
+
+  <script src="./js/file-upload.js"></script>
+  <script src="./js/iCheck.js"></script>
+  <script src="./js/typeahead.js"></script>
+  <script src="./js/select2.js"></script>
+  <script src="./node_modules/icheck/icheck.min.js"></script>
+  <script src="./bower_components/typeahead.js/dist/typeahead.bundle.min.js"></script>
+  <script src="./node_modules/select2/dist/js/select2.min.js"></script>
+</body>
+
+</html>
