@@ -1,5 +1,5 @@
-#WORKSHOP
-##Day 1
+# WORKSHOP
+## Day 1
 
 1. JSON
   1. Intro - Array accessing using indices similarly dict using keys
@@ -53,7 +53,7 @@
     3. Get request
     4. POST request
 
-##Day 2
+## Day 2
 
   1. Connection with mongo
     1. install mongoose
